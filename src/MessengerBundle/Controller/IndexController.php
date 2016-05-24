@@ -2,16 +2,14 @@
 
 namespace MessengerBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use FOS\RestBundle\Controller\FOSRestController;
 use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
 
-class IndexController extends Controller{
+class IndexController extends FOSRestController{
 
-    public function indexAction()
+    public function getMessagesAction()
     {
-        $number = rand(0, 100);
-
-        return new JsonResponse($number);
+        $arr = array('a' => 1, 'b' => 2, 'c' => 3, 'd' => 4, 'e' => 5);
+        return new JsonResponse($arr);
     }
 }
