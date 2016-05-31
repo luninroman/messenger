@@ -2,10 +2,10 @@
 
 namespace MessengerBundle\Controller;
 
-use FOS\RestBundle\Controller\FOSRestController;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class IndexController extends FOSRestController{
+class IndexController extends Controller{
 
     public function getMessagesAction()
     {
