@@ -1,10 +1,6 @@
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-view:
-    path:     /api/messages
-    defaults: { _controller: "MessengerBundle:Index:getMessages" }
-
 api:
     path:     /
     defaults: { _controller: "MessengerBundle:View:show" }
