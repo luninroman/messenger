@@ -68,6 +68,9 @@
     color: #fff;
     background-color:#59b5fa;
 }
+.help-block {
+    color:#a94442;
+}
 @media(max-width:768px){
     #login-dp{
         background-color: inherit;

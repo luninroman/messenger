@@ -16,9 +16,11 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
+                always_use_default_target_path: true #this is here to redirect after login to / page
+                default_target_path: /
             logout:       true
             anonymous:    true
-            remember_me:
+            remember_me: #this is need here to make remeber me work properly
                 secret:   '%secret%'
                 lifetime: 604800 # 1 week in seconds
 
