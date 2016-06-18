@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>{% block title %}Welcome!{% endblock %}</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    {% block stylesheets %}{% endblock %}
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -18,10 +20,46 @@
     <![endif]-->
 </head>
 <body>
-ass
+<!--header navigation bar-->
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                <span class="sr-only">Navigation menu</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">Roma Project</a>
+        </div>
+        <div class="collapse navbar-collapse" id="menu">
+            <!--<ul class="nav navbar-nav">
+                <li><a href="#">Пункт 1</a></li>
+                <li><a href="#">Пункт 2</a></li>
+                <li><a href="#">Пункт 3</a></li>
+            </ul>-->
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <p class="navbar-text">
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            {% if is_granted("ROLE_USER") %}
+                                Logged in as {{ app.user.username }}
+                            {% endif %}
+                        {% endif %}
+                    </p>
+                </li>
+                <li>
+                    <p class="navbar-text"><a href="/logout">Logout</a></p>
+                </li>
+            </ul>
+        </div> <!--div .collapse-->
+    </div> <!--div .container-->
+</div> <!--div .navbar-->
+{% block content %}{% endblock %}
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+{% block javascripts %}{% endblock %}
 </body>
 </html>
