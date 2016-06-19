@@ -1,6 +1,10 @@
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
-api:
+index:
     path:     /
-    defaults: { _controller: "MessengerBundle:View:show" }
+    defaults: { _controller: "MessengerBundle:Messenger:show" }
+
+user:
+    path:     /profile/{id}
+    defaults: { _controller: "MessengerBundle:User:profile" }

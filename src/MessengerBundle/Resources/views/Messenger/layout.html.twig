@@ -33,19 +33,12 @@
             <a href="#" class="navbar-brand">Roma Project</a>
         </div>
         <div class="collapse navbar-collapse" id="menu">
-            <!--<ul class="nav navbar-nav">
-                <li><a href="#">Пункт 1</a></li>
-                <li><a href="#">Пункт 2</a></li>
-                <li><a href="#">Пункт 3</a></li>
-            </ul>-->
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <p class="navbar-text">
-                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             {% if is_granted("ROLE_USER") %}
-                                Logged in as {{ app.user.username }}
+                                Logged in as <a href="/profile/{{ app.user.id }}">{{ app.user.username }}</a>
                             {% endif %}
-                        {% endif %}
                     </p>
                 </li>
                 <li>

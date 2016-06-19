@@ -5,10 +5,10 @@ namespace MessengerBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ViewController extends Controller
+class MessengerController extends Controller
 {
     public function showAction()
     {
-        return $this->render('MessengerBundle:Front:index.html.twig');
+        return $this->render('MessengerBundle:Messenger/Front:messenger.html.twig');
     }
 }
