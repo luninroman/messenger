@@ -71,6 +71,12 @@
 .help-block {
     color:#a94442;
 }
+.form-horizontal > div > img {
+    width:120px;
+}
+.margin-bottom{
+    margin-bottom:10px;
+}
 @media(max-width:768px){
     #login-dp{
         background-color: inherit;

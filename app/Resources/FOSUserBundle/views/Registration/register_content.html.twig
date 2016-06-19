@@ -1,38 +1,32 @@
-{% trans_default_domain 'FOSUserBundle' %}
 <!--Page Content-->
 <div class="container">
     <div class="row">
         <div class="col-lg-5 col-lg-offset-4 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-3 col-xs-6 col-xs-offset-3">
             <h2 id="form-header">Registration</h2>
+
+
+
             <form class="form-horizontal" action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST">
-                <div id="fos_user_registration_form">
-                <div class="form-group">
-                    <div class="col-sm-10">
-                        {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'Pick a username' } }) }}
+                <div class="form-group" id="fos_user_registration_form">
+                    <div class="col-sm-10 margin-bottom">
+                        {{ form_widget(form.username, { 'attr': {'class': 'form-control', 'placeholder': 'Pick a username'|trans } }) }}
                         {{ form_errors(form.username) }}
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-10">
-                        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Email' } }) }}
+                    <div class="col-sm-10 margin-bottom">
+                        {{ form_widget(form.email, { 'attr': {'class': 'form-control', 'placeholder': 'Email'|trans } }) }}
                         {{ form_errors(form.email) }}
-
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-sm-10">
-                        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'Password' } }) }}
+                    <div class="col-sm-10 margin-bottom">
+                        {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-control', 'placeholder': 'Password'|trans } }) }}
                         {{ form_errors(form.plainPassword.first) }}
                     </div>
-                </div>
-                <div class="form-group">
                     <div class="col-sm-10">
-                        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'Confirm password' } }) }}
+                        {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': 'Confirm password'|trans } }) }}
                         {{ form_errors(form.plainPassword.second) }}
                     </div>
+                    {{ form_rest(form) }}
+
                 </div>
-                </div>
-                <br />
                 <div class="form-group">
                     <div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-9 col-xs-offset-0 col-xs-12">
                         <input type="submit" class="btn btn-primary" value="Sign Up">
@@ -40,6 +34,7 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </div> <!--.row-->
 </div> <!--.container-->

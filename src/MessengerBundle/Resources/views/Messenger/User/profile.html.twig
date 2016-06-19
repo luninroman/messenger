@@ -11,6 +11,7 @@
                 <br />
                 <form class="form form-horizontal" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
+                        <img src="{{ asset('assets/images/profile/')}}{{ user.image }}" alt="">
                         <label class="control-label col-sm-2 fontColor" for="profilePhoto">Profile photo:</label>
                         <div class="col-sm-8">
                             <input type="file" name="photo" multiple accept="image/*" id="profilePhoto">

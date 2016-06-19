@@ -1,10 +1,9 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "::base.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
 
-{% block fos_user_content %}
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
-    {% if targetUrl %}
-    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
-    {% endif %}
-{% endblock fos_user_content %}
+{% block content %}
+        <div class="alert alert-success container" style="margin-top: 100px;" role="alert">Thank you, {{ user.username }}. Registration finished,
+            now you can fill your <a href="/profile/{{ user.id }}">profile</a> or visit <a href="/">chat</a>
+        </div>
+{% endblock content %}
